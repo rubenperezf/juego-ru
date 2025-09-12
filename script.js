@@ -13,6 +13,7 @@ class WordGame {
       "me",
       "go",
       "so",
+      "some",
     ]
     this.redWords = ["the", "was", "is"]
 
