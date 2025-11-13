@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Palabras</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <!-- Pantalla de Inicio -->
+      <div id="start-screen" class="screen active">
+        <h1>Juego de Palabras</h1>
+        <button id="play-btn" class="btn-large">PLAY</button>
+        <a href="index.html" class="back-link">← Volver</a>
+      </div>
+
+      <!-- Pantalla del Juego -->
+      <div id="game-screen" class="screen">
+        <div id="word-display">
+          <span id="current-word"></span>
+        </div>
+
+        <div id="game-controls">
+          <button id="correct-btn" class="control-btn green-btn">✓</button>
+          <button id="incorrect-btn" class="control-btn red-btn">✗</button>
+        </div>
+      </div>
+
+      <!-- Pantalla de Finalización -->
+      <div id="finish-screen" class="screen">
+        <h1>¡FINISH!</h1>
+        <p>¡Has completado todas las palabras!</p>
+        <button id="play-again-btn" class="btn-large">PLAY AGAIN</button>
+        <a href="index.html" class="back-link">← Volver</a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -40,6 +40,53 @@ body {
     display: flex;
 }
 
+/* Pantalla de Selección de Juego */
+#selection-screen h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.game-selection {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.game-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    min-width: 250px;
+    max-width: 300px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.game-card:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.game-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.game-card p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
 /* Pantalla de Inicio */
 #start-screen h1 {
     font-size: 3rem;
@@ -51,6 +98,19 @@ body {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 40px;
+}
+
+.back-link {
+    margin-top: 30px;
+    color: #667eea;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
 }
 
 .btn-large {
@@ -167,23 +227,93 @@ body {
     transition: background-color 0.1s ease;
 }
 
+/* Juego de Números */
+#number-display {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#current-number {
+    font-size: 40rem;
+    font-weight: bold;
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.number-input {
+    display: none;
+    font-size: 30rem;
+    font-weight: bold;
+    color: #333;
+    border: 15px solid #667eea;
+    border-radius: 30px;
+    padding: 40px 80px;
+    text-align: center;
+    width: 800px;
+    max-width: 90%;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.number-input:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.blue-btn {
+    background: #667eea;
+    color: white;
+    width: 200px;
+    height: 80px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.blue-btn:hover {
+    background: #764ba2;
+    transform: scale(1.05);
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
     #current-word {
         font-size: 4rem;
     }
-    
+
+    #current-number {
+        font-size: 30rem;
+    }
+
+    .number-input {
+        font-size: 20rem;
+        width: 600px;
+    }
+
     .control-btn {
         width: 100px;
         height: 100px;
         font-size: 2.5rem;
     }
-    
+
+    .blue-btn {
+        width: 160px;
+        height: 70px;
+        font-size: 1.3rem;
+    }
+
+    .game-card {
+        min-width: 200px;
+    }
+
     #game-controls {
         gap: 40px;
     }
-    
-    #start-screen h1, #finish-screen h1 {
+
+    #start-screen h1, #finish-screen h1, #selection-screen h1 {
         font-size: 2.5rem;
     }
 }
@@ -192,13 +322,34 @@ body {
     #current-word {
         font-size: 3rem;
     }
-    
+
+    #current-number {
+        font-size: 20rem;
+    }
+
+    .number-input {
+        font-size: 15rem;
+        width: 400px;
+        padding: 30px 60px;
+    }
+
     .control-btn {
         width: 80px;
         height: 80px;
         font-size: 2rem;
     }
-    
+
+    .blue-btn {
+        width: 140px;
+        height: 60px;
+        font-size: 1.1rem;
+    }
+
+    .game-card {
+        min-width: 100%;
+        padding: 30px 20px;
+    }
+
     #game-controls {
         gap: 30px;
     }

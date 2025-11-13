@@ -8,32 +8,20 @@
   </head>
   <body>
     <div id="game-container">
-      <!-- Pantalla de Inicio -->
-      <div id="start-screen" class="screen active">
-        <h1>Juego de Palabras</h1>
-        <button id="play-btn" class="btn-large">PLAY</button>
-      </div>
-
-      <!-- Pantalla del Juego -->
-      <div id="game-screen" class="screen">
-        <div id="word-display">
-          <span id="current-word"></span>
+      <!-- Pantalla de Selección de Juego -->
+      <div id="selection-screen" class="screen active">
+        <h1>Selecciona un Juego</h1>
+        <div class="game-selection">
+          <a href="word-game.html" class="game-card">
+            <h2>Juego de Palabras</h2>
+            <p>Reconoce y practica palabras</p>
+          </a>
+          <a href="numbers-game.html" class="game-card">
+            <h2>Números hasta 100</h2>
+            <p>Aprende los números del 1 al 100</p>
+          </a>
         </div>
-
-        <div id="game-controls">
-          <button id="correct-btn" class="control-btn green-btn">✓</button>
-          <button id="incorrect-btn" class="control-btn red-btn">✗</button>
-        </div>
-      </div>
-
-      <!-- Pantalla de Finalización -->
-      <div id="finish-screen" class="screen">
-        <h1>¡FINISH!</h1>
-        <p>¡Has completado todas las palabras!</p>
-        <button id="play-again-btn" class="btn-large">PLAY AGAIN</button>
       </div>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
