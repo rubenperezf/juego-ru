@@ -2,20 +2,34 @@ class WordGame {
   constructor() {
     // Palabras del juego
     this.blackWords = [
-      "all",
-      "my",
-      "also",
-      "he",
-      "she",
-      "we",
-      "be",
-      "busy",
-      "me",
-      "go",
-      "so",
-      "some",
+      "orange",
+      "white",
+      "how",
+      "brown",
+      "stop",
+      "said",
+      "says",
+      "saw",
+      "see",
+      "little",
+      "yellow",
+      "read",
+      "eat",
+      "they",
+      "write"
     ]
-    this.redWords = ["the", "was", "is"]
+    this.redWords = [
+      "go",
+      "I",
+      "like",
+      "of",
+      "will",
+      "get",
+      "no",
+      "want",
+      "with",
+      "for",
+    ]
 
     // Estado del juego
     this.currentWords = []
