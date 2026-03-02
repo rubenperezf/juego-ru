@@ -22,18 +22,7 @@ class WordGame {
       "When",
       "Where",
     ]
-    this.redWords = [
-      // "go",
-      // "I",
-      // "like",
-      // "of",
-      // "will",
-      // "get",
-      // "no",
-      // "want",
-      // "with",
-      // "for",
-    ]
+    this.redWords = ["his", "as", "my", "into", "now", "new", "give"]
 
     // Estado del juego
     this.currentWords = []
