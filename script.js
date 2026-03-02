@@ -2,33 +2,37 @@ class WordGame {
   constructor() {
     // Palabras del juego
     this.blackWords = [
-      "orange",
-      "white",
-      "how",
-      "brown",
-      "stop",
-      "said",
-      "says",
-      "saw",
-      "see",
-      "little",
-      "yellow",
-      "read",
-      "eat",
-      "they",
-      "write"
+      "Pink",
+      "Your",
+      "Green",
+      "Take",
+      "Their",
+      "Then",
+      "Does",
+      "Goes",
+      "Black",
+      "Them",
+      "This",
+      "Ouch",
+      "About",
+      "Use",
+      "Who",
+      "What",
+      "Why",
+      "When",
+      "Where",
     ]
     this.redWords = [
-      "go",
-      "I",
-      "like",
-      "of",
-      "will",
-      "get",
-      "no",
-      "want",
-      "with",
-      "for",
+      // "go",
+      // "I",
+      // "like",
+      // "of",
+      // "will",
+      // "get",
+      // "no",
+      // "want",
+      // "with",
+      // "for",
     ]
 
     // Estado del juego
@@ -48,6 +52,7 @@ class WordGame {
     this.correctBtn = document.getElementById("correct-btn")
     this.incorrectBtn = document.getElementById("incorrect-btn")
     this.playAgainBtn = document.getElementById("play-again-btn")
+    this.listenBtn = document.getElementById("listen-btn")
 
     this.initializeEventListeners()
   }
@@ -57,6 +62,17 @@ class WordGame {
     this.playAgainBtn.addEventListener("click", () => this.startGame())
     this.correctBtn.addEventListener("click", () => this.handleAnswer(true))
     this.incorrectBtn.addEventListener("click", () => this.handleAnswer(false))
+    this.listenBtn.addEventListener("click", () => this.speakCurrentWord())
+  }
+
+  speakCurrentWord() {
+    if (!this.gameActive) return
+    const word = this.currentWords[this.currentWordIndex]?.text
+    if (!word) return
+    const utterance = new SpeechSynthesisUtterance(word)
+    utterance.lang = "en-US"
+    speechSynthesis.cancel()
+    speechSynthesis.speak(utterance)
   }
 
   shuffleArray(array) {
@@ -72,7 +88,7 @@ class WordGame {
     // Crear array de palabras con sus colores
     const allWords = [
       ...this.blackWords.map((word) => ({ text: word, color: "black" })),
-      ...this.redWords.map((word) => ({ text: word, color: "red" })),
+      ...this.redWords?.map((word) => ({ text: word, color: "red" })),
     ]
 
     // Mezclar las palabras aleatoriamente
@@ -126,7 +142,7 @@ class WordGame {
       document.body.classList.remove(
         "feedback-active",
         "correct-feedback",
-        "incorrect-feedback"
+        "incorrect-feedback",
       )
     }, 500)
   }
