@@ -21,8 +21,22 @@ class WordGame {
       "Why",
       "When",
       "Where",
+      "black",
+      "look",
+      "very",
+      "every",
     ]
-    this.redWords = ["his", "as", "my", "into", "now", "new", "give"]
+    this.redWords = [
+      "his",
+      "as",
+      "my",
+      "into",
+      "now",
+      "new",
+      "give",
+      "or",
+      "by",
+    ]
 
     // Estado del juego
     this.currentWords = []
