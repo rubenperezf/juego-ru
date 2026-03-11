@@ -118,14 +118,16 @@ class WordGame {
   handleAnswer(userAnswer) {
     if (!this.gameActive) return
 
-    const currentWord = this.currentWords[this.currentWordIndex]
-
     const correctAnswer = true
     const isCorrect = userAnswer === correctAnswer
     this.showFeedback(isCorrect)
 
-    // Avanzar a la siguiente palabra después del feedback
     setTimeout(() => {
+      if (!isCorrect) {
+        // Push the word to the end of the list so it appears again
+        const failedWord = this.currentWords[this.currentWordIndex]
+        this.currentWords.push(failedWord)
+      }
       this.currentWordIndex++
       this.displayCurrentWord()
     }, 800)
