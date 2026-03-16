@@ -25,6 +25,9 @@ class WordGame {
       "look",
       "very",
       "every",
+      "nice",
+      "because",
+      "down",
     ]
     this.redWords = [
       "his",
@@ -36,6 +39,7 @@ class WordGame {
       "give",
       "or",
       "by",
+      "went",
     ]
 
     // Estado del juego
