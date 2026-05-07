@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decenas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <!-- Pantalla de Inicio -->
+      <div id="start-screen" class="screen active">
+        <h1>Decenas</h1>
+        <p>Aprende los números de 10 en 10</p>
+        <button id="play-btn" class="btn-large">PLAY</button>
+        <a href="index.html" class="back-link">← Volver</a>
+      </div>
+
+      <!-- Pantalla del Juego -->
+      <div id="game-screen" class="screen">
+        <div id="number-display">
+          <span id="current-number"></span>
+          <input type="number" id="number-input" class="suma-input" placeholder="?" style="display:none" />
+        </div>
+        <div id="game-controls">
+          <button id="correct-btn" class="control-btn green-btn">✓</button>
+          <button id="incorrect-btn" class="control-btn red-btn">✗</button>
+        </div>
+      </div>
+
+      <!-- Pantalla de Finalización -->
+      <div id="finish-screen" class="screen">
+        <h1>¡FINISH!</h1>
+        <p>¡Has practicado todas las decenas!</p>
+        <button id="play-again-btn" class="btn-large">PLAY AGAIN</button>
+        <a href="index.html" class="back-link">← Volver</a>
+      </div>
+    </div>
+
+    <script src="decenas-game.js"></script>
+  </body>
+</html>
