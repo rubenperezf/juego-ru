@@ -1,117 +1,78 @@
-class WordGame {
+class RedWordGame {
   constructor() {
-    // Palabras del juego
-    this.blackWords = [
-      "we",
-      "be",
-      "he",
-      "she",
-      "me",
-      "busy",
-      "so",
-      "also",
+    ;((this.redWords = [
+      "the",
+      "was",
+      "is",
+      "a",
+      "on",
+      "and",
+      "to",
+      "for",
       "go",
-      "my",
-      "all",
-      "some",
-      "day",
-      "say",
-      "too",
-      "boy",
-      "girl",
-      "should",
-      "would",
-      "could",
-      "they",
-      "write",
-      "orange",
-      "white",
-      "how",
-      "brown",
-      "stop",
+      "I",
+      "like",
+      "of",
+      "will",
+      "get",
+      "no",
+      "want",
+      "with",
       "said",
-      "says",
-      "saw",
+      "you",
+      "in",
+      "put",
       "see",
-      "little",
+      "stop",
+      "from",
+      "off",
+      "he",
+      "has",
+      "have",
+      "me",
+      "his",
+      "as",
+      "my",
+      "into",
+      "now",
+      "new",
+      "give",
+      "or",
+      "by",
+      "went",
+      "do",
+      "are",
+      "they",
+      "any",
+      "black",
+      "blue",
+      "brown",
+      "gray",
+      "green",
+      "orange",
+      "pink",
+      "purple",
+      "white",
       "yellow",
-      "read",
-      "eat",
+      "one",
+      "two",
+      "come",
       "who",
       "what",
       "where",
       "why",
       "when",
-      "bus",
-      "hear",
-      "blue",
-      "eek",
-      "this",
-      "them",
-      "that",
-      "ouch",
-      "out",
-      "about",
-      "pink",
-      "your",
-      "use",
-      "green",
-      "take",
-      "their",
-      "then",
-      "does",
-      "goes",
-      "black",
-      "look",
-      "very",
-      "every",
-      "nice",
-      "because",
-      "down",
-      "here",
-      "good",
-      "again",
-      "fish",
-      "been",
-      "help",
-      "jump",
-      "zero",
-      "three",
-      "four",
-      "five",
-      "six",
-      "seven",
-      "eight",
-      "nine",
-      "were",
-      "her",
-    ]
-    this.redWords = [
-      // "his",
-      // "as",
-      // "my",
-      // "into",
-      // "now",
-      // "new",
-      // "give",
-      // "or",
-      // "by",
-      // "went",
-    ]
-
-    // Estado del juego
-    this.currentWords = []
+    ]),
+      (this.currentWords = []))
     this.currentWordIndex = 0
     this.gameActive = false
 
-    // Elementos del DOM
     this.startScreen = document.getElementById("start-screen")
     this.gameScreen = document.getElementById("game-screen")
     this.finishScreen = document.getElementById("finish-screen")
     this.currentWordElement = document.getElementById("current-word")
     this.gameContainer = document.getElementById("game-container")
 
-    // Botones
     this.playBtn = document.getElementById("play-btn")
     this.correctBtn = document.getElementById("correct-btn")
     this.incorrectBtn = document.getElementById("incorrect-btn")
@@ -149,18 +110,12 @@ class WordGame {
   }
 
   startGame() {
-    // Crear array de palabras con sus colores
-    const allWords = [
-      ...this.blackWords.map((word) => ({ text: word, color: "black" })),
-      ...this.redWords?.map((word) => ({ text: word, color: "red" })),
-    ]
-
-    // Mezclar las palabras aleatoriamente
-    this.currentWords = this.shuffleArray(allWords)
+    this.currentWords = this.shuffleArray(
+      this.redWords.map((word) => ({ text: word, color: "red" })),
+    )
     this.currentWordIndex = 0
     this.gameActive = true
 
-    // Cambiar a pantalla de juego
     this.showScreen("game")
     this.displayCurrentWord()
   }
@@ -179,13 +134,11 @@ class WordGame {
   handleAnswer(userAnswer) {
     if (!this.gameActive) return
 
-    const correctAnswer = true
-    const isCorrect = userAnswer === correctAnswer
+    const isCorrect = userAnswer === true
     this.showFeedback(isCorrect)
 
     setTimeout(() => {
       if (!isCorrect) {
-        // Push the word to the end of the list so it appears again
         const failedWord = this.currentWords[this.currentWordIndex]
         this.currentWords.push(failedWord)
       }
@@ -203,7 +156,6 @@ class WordGame {
       document.body.classList.add("incorrect-feedback")
     }
 
-    // Remover el feedback después de un breve momento
     setTimeout(() => {
       document.body.classList.remove(
         "feedback-active",
@@ -219,12 +171,10 @@ class WordGame {
   }
 
   showScreen(screenName) {
-    // Ocultar todas las pantallas
     document.querySelectorAll(".screen").forEach((screen) => {
       screen.classList.remove("active")
     })
 
-    // Mostrar la pantalla solicitada
     const targetScreen = document.getElementById(`${screenName}-screen`)
     if (targetScreen) {
       targetScreen.classList.add("active")
@@ -232,7 +182,6 @@ class WordGame {
   }
 }
 
-// Inicializar el juego cuando se carga la página
 document.addEventListener("DOMContentLoaded", () => {
-  new WordGame()
+  new RedWordGame()
 })
