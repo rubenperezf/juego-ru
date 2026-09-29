@@ -77,6 +77,10 @@ class SpellingGame {
     const utterance = new SpeechSynthesisUtterance(word)
     utterance.lang = "en-US"
     utterance.rate = 0.85
+    const americanVoice = speechSynthesis
+      .getVoices()
+      .find((voice) => voice.lang.toLowerCase().startsWith("en-us"))
+    if (americanVoice) utterance.voice = americanVoice
     speechSynthesis.cancel()
     speechSynthesis.speak(utterance)
   }
