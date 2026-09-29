@@ -25,6 +25,13 @@ Aprende y practica los números del 1 al 100.
 - Debes responder correctamente para avanzar al siguiente número
 - El juego termina al llegar al 100
 
+#### Deletrear Palabras
+Escucha una palabra en inglés y deletréala sin verla.
+
+- Puedes volver a escucharla todas las veces que quieras con 🔊
+- Marca ✓ o ✗ y la palabra aparecerá brevemente para comprobarla
+- Si marcas ✗, la palabra vuelve a aparecer al final
+
 ### Cómo jugar
 1. Abre `index.html` en tu navegador
 2. Selecciona un juego

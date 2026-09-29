@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deletrear Palabras</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="game-container">
+      <section id="start-screen" class="screen active">
+        <h1>Deletrear Palabras</h1>
+        <p>Escucha la palabra, deletréala y marca si fue correcta o incorrecta.</p>
+        <button id="play-btn" class="btn-large">PLAY</button>
+        <a href="index.html" class="back-link">← Volver</a>
+      </section>
+
+      <section id="game-screen" class="screen spelling-screen">
+        <p id="progress" class="spelling-progress"></p>
+        <p id="instruction" class="spelling-instruction">Escucha y deletrea la palabra</p>
+        <button id="listen-btn" class="control-btn spelling-listen-btn" aria-label="Escuchar la palabra otra vez">🔊</button>
+        <div id="spelling-answer" class="spelling-answer" aria-live="polite"></div>
+        <div id="spelling-controls" class="spelling-controls">
+          <button id="correct-btn" class="control-btn green-btn" aria-label="Correcto">✓</button>
+          <button id="incorrect-btn" class="control-btn red-btn" aria-label="Incorrecto">✗</button>
+        </div>
+      </section>
+
+      <section id="finish-screen" class="screen">
+        <h1>¡FINISH!</h1>
+        <p>¡Has deletreado todas las palabras!</p>
+        <button id="play-again-btn" class="btn-large">PLAY AGAIN</button>
+        <a href="index.html" class="back-link">← Volver</a>
+      </section>
+    </main>
+
+    <script src="spelling-game.js"></script>
+  </body>
+</html>

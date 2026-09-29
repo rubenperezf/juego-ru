@@ -85,6 +85,10 @@ body {
     background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
 }
 
+.game-card.spelling-card {
+    background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+}
+
 .game-card h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
@@ -233,6 +237,56 @@ body {
 
 .feedback-active {
     transition: background-color 0.1s ease;
+}
+
+/* Juego de Deletrear */
+.spelling-screen {
+    gap: 24px;
+}
+
+.spelling-instruction {
+    color: #555;
+    font-size: 1.35rem;
+}
+
+.spelling-progress {
+    color: #777;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.spelling-listen-btn {
+    background: #667eea;
+    color: white;
+}
+
+.spelling-listen-btn:hover {
+    background: #526ad1;
+    transform: scale(1.08);
+}
+
+.spelling-answer {
+    min-height: 110px;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #222;
+    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+}
+
+.spelling-controls[hidden] {
+    display: none;
+}
+
+.spelling-controls {
+    display: flex;
+    gap: 60px;
+}
+
+@media (max-width: 480px) {
+    .spelling-answer { font-size: 3.5rem; }
+    .spelling-controls { gap: 30px; }
 }
 
 /* Juego de Sumas */
