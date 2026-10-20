@@ -13,6 +13,12 @@ class SpellingGame {
       "her",
       "here",
       "eight",
+      "under",
+      "down",
+      "orange",
+      "people",
+      "purple",
+      "onto",
     ]
     this.currentWords = []
     this.currentWordIndex = 0
@@ -89,7 +95,9 @@ class SpellingGame {
     if (!this.gameActive || this.controlsElement.hidden) return
 
     this.answerElement.textContent = this.currentWords[this.currentWordIndex]
-    this.instructionElement.textContent = isCorrect ? "¡Correcto!" : "Vamos a practicarla otra vez"
+    this.instructionElement.textContent = isCorrect
+      ? "¡Correcto!"
+      : "Vamos a practicarla otra vez"
     document.body.classList.add(
       "feedback-active",
       isCorrect ? "correct-feedback" : "incorrect-feedback",
